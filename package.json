@@ -1,6 +1,6 @@
 {
   "name": "ajax-lib",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simplified AJAX fuunction library without jQuery",
   "main": "index.js",
   "scripts": {
