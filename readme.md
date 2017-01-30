@@ -47,7 +47,7 @@
 #### you can also pass the options with method & data
 
 ### request with data
-#### the order of the arguments must be <url, options, callback>
+#### the order of the arguments must be url, options, callback
 	var ajax = require('ajax-lib')
 	ajax.request('http://google.com', {
       method:"POST",
