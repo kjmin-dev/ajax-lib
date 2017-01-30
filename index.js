@@ -1,1 +1,1 @@
-module.exports = require('./lib').AJAX;
+module.exports = require('./dist').AJAX;
