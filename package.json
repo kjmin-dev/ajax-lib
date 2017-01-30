@@ -1,0 +1,41 @@
+{
+  "name": "ajax-lib",
+  "version": "0.0.4",
+  "description": "Simplified AJAX fuunction library without jQuery",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/lightj/ajax-lib"
+  },
+  "keywords": [
+    "ajax",
+    "javascript",
+    "node"
+  ],
+  "engines": {
+    "node": ">=5.11.0"
+  },
+  "files": [
+    "readme.md",
+    "index.js",
+    "dist/"
+  ],
+  "main": "./index.js",
+  "author": "leichtjoon",
+  "license": {
+    "type": "WTFPL",
+    "url": "http://www.wtfpl.net/about/"
+  },
+  "dependencies": {
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  }
+}
