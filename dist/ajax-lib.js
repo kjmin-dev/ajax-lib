@@ -223,7 +223,7 @@ exports.del = del;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const ajax = __webpack_require__(0).AJAX
+const ajax = __webpack_require__(0)
 
 if(typeof window === 'object') window.ajax = ajax
 else module.exports = ajax

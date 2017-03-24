@@ -1,4 +1,4 @@
-const ajax = require('./dist').AJAX
+const ajax = require('./dist')
 
-if(typeof window === 'object') window.ajax = ajax
+if(typeof window === 'object') window.ajax = ajax.default
 else module.exports = ajax
