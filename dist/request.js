@@ -37,18 +37,10 @@ function request(uri, opts, cb) {
   var isOptions = typeof cb === 'undefined';
   var options = isOptions ? {} : opts;
 
-  if (typeof module !== 'undefined' && module.exports) {
-    // CommonJS
-    httpRequest(Object.assign({ uri: uri }, options), function (err, res, body) {
-      if (err) {
-        cb(err, res);
-      }
-      cb(null, res);
-    });
-  } else {
-    // Browser
+  if ((typeof httpRequest === 'undefined' ? 'undefined' : _typeof(httpRequest)) === 'object') {
+    // web
     httpRequest.open(options.method, uri, true);
-    httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    httpRequest.setRequestHeader("Content-Type", options.contentType ? options.contentType : "application/json;charset=UTF-8");
     httpRequest.send(JSON.stringify(options.data));
     httpRequest.onreadystatechange = function () {
       if (httpRequest.readyState == httpRequest.DONE) {
@@ -59,6 +51,13 @@ function request(uri, opts, cb) {
         }
       }
     };
+  } else if (typeof httpRequest === 'function') {
+    httpRequest(Object.assign({ uri: uri }, options), function (err, res, body) {
+      if (err) {
+        cb(err, res);
+      }
+      cb(null, res);
+    });
   }
 }
 

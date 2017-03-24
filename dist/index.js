@@ -1,15 +1,26 @@
 'use strict';
 
-var r = require('./request');
-var ctor = require('./constructor');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.AJAX = undefined;
+
+var _request = require('./request');
+
+var _request2 = _interopRequireDefault(_request);
+
+var _constructor = require('./constructor');
+
+var _constructor2 = _interopRequireDefault(_constructor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AJAX = {
-  httpRequest: ctor(),
-  request: r.request,
-  get: r.get,
-  post: r.post,
-  put: r.put,
-  del: r.del
+  httpRequest: (0, _constructor2.default)(),
+  request: _request2.default.request,
+  get: _request2.default.get,
+  post: _request2.default.post,
+  put: _request2.default.put,
+  del: _request2.default.del
 };
-
-module.exports.AJAX = AJAX;
+exports.AJAX = AJAX;

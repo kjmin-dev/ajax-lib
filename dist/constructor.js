@@ -2,18 +2,16 @@
 
 function ctor() {
   try {
-    if (typeof module !== 'undefined' && module.exports) {
-      // is Node.js
-      return require('request');
+    if (window.XMLHttpRequest) {
+      return new XMLHttpRequest();
     } else if (window.ActiveXObject) {
       // is IE
       return new ActiveXObject("Microsoft.XMLHTTP");
-    } else if (window.XMLHttpRequest) {
-      return new XMLHttpRequest();
     }
   } catch (e) {
-    return null;
+    return require('request');
   }
+  return null;
 }
 
 module.exports = ctor;
