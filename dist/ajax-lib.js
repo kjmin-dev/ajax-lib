@@ -76,11 +76,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.AJAX = undefined;
 
 var _request = __webpack_require__(2);
-
-var _request2 = _interopRequireDefault(_request);
 
 var _constructor = __webpack_require__(1);
 
@@ -90,13 +87,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var AJAX = {
   httpRequest: (0, _constructor2.default)(),
-  request: _request2.default.request,
-  get: _request2.default.get,
-  post: _request2.default.post,
-  put: _request2.default.put,
-  del: _request2.default.del
+  request: _request.request,
+  get: _request.get,
+  post: _request.post,
+  put: _request.put,
+  del: _request.del
 };
-exports.AJAX = AJAX;
+exports.default = AJAX;
 
 /***/ }),
 /* 1 */
@@ -105,6 +102,9 @@ exports.AJAX = AJAX;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 function ctor() {
   try {
     if (window.XMLHttpRequest) {
@@ -119,7 +119,7 @@ function ctor() {
   return null;
 }
 
-module.exports = ctor;
+exports.default = ctor;
 
 /***/ }),
 /* 2 */
@@ -127,6 +127,10 @@ module.exports = ctor;
 
 "use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -209,11 +213,11 @@ function del(uri, opts, cb) {
   request.apply(this, optimizeCB(uri, 'DELETE', opts, cb));
 }
 
-module.exports.request = all;
-module.exports.get = get;
-module.exports.post = post;
-module.exports.put = put;
-module.exports.del = del;
+exports.request = request;
+exports.get = get;
+exports.post = post;
+exports.put = put;
+exports.del = del;
 
 /***/ }),
 /* 3 */

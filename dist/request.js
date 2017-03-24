@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function optimizeCB(uri, method, opts, cb) {
@@ -81,8 +85,8 @@ function del(uri, opts, cb) {
   request.apply(this, optimizeCB(uri, 'DELETE', opts, cb));
 }
 
-module.exports.request = all;
-module.exports.get = get;
-module.exports.post = post;
-module.exports.put = put;
-module.exports.del = del;
+exports.request = request;
+exports.get = get;
+exports.post = post;
+exports.put = put;
+exports.del = del;

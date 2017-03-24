@@ -1,5 +1,8 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 function ctor() {
   try {
     if (window.XMLHttpRequest) {
@@ -14,4 +17,4 @@ function ctor() {
   return null;
 }
 
-module.exports = ctor;
+exports.default = ctor;
